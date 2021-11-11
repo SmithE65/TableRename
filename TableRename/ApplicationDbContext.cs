@@ -10,7 +10,7 @@ public class ApplicationDbContext : DbContext
     {
     }
 
-    public DbSet<Entity1>? Entity1s { get; set; }
+    public DbSet<Entity4>? Entity4s { get; set; }
     public DbSet<Entity2>? Entity2s { get; set; }
     public DbSet<Entity3>? Entity3s { get; set; }
 }
@@ -29,7 +29,7 @@ public class ApplicationDbContextFactory : IDesignTimeDbContextFactory<Applicati
 }
 
 
-public class Entity1
+public class Entity4
 {
     public int Id { get; set; }
     public int Entity2Id { get; set; }
@@ -43,13 +43,13 @@ public class Entity1
 public class Entity2
 {
     public int Id { get; set; }
-    [InverseProperty(nameof(Entity1.Entity2Navigation))]
-    public ICollection<Entity1> Entity1s { get; set; } = new List<Entity1>();
+    [InverseProperty(nameof(Entity4.Entity2Navigation))]
+    public ICollection<Entity4> Entity1s { get; set; } = new List<Entity4>();
 }
 
 public class Entity3
 {
     public int Id { get; set; }
-    [InverseProperty(nameof(Entity1.Entity3Navigation))]
-    public ICollection<Entity1> Entity1s { get; set; } = new List<Entity1>();
+    [InverseProperty(nameof(Entity4.Entity3Navigation))]
+    public ICollection<Entity4> Entity1s { get; set; } = new List<Entity4>();
 }
